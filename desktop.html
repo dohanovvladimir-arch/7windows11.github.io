@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows Aero Topbar</title>
     <style>
-        /* Сброс отступов и добавление фонового изображения в стиле Win 7 */
+        /* Reset default margins and padding */
         * {
             margin: 0;
             padding: 0;
@@ -14,53 +14,51 @@
         }
 
         body {
-            /* Яркий абстрактный фон, чтобы было хорошо видно эффект размытия стекла */
+            /* Vibrant abstract background to showcase the glass blur effect */
             background: linear-gradient(135px, #0078d7 0%, #00bcf2 40%, #00b294 100%);
             background-attachment: fixed;
             min-height: 100vh;
         }
 
-        /* Эффект стекла Windows Aero */
+        /* Windows Aero Glass Effect */
         .aero-topbar {
-            /* Полупрозрачный белый/голубоватый фон */
-            background: rgba(255, 255, 255, 0.15); 
+            /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.25); 
             
-            /* Главный секрет Aero: размытие всего, что находится ЗА панелью */
+            /* Blurs everything behind the panel */
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px); /* Поддержка Safari */
+            -webkit-backdrop-filter: blur(15px);
 
-            /* Выравнивание элементов */
+            /* Alignment */
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 30px;
             
-            /* Фиксация наверх */
+            /* Fixed position */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
 
-            /* Тонкая глянцевая рамка (имитация блика на грани стекла) */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-            
-            /* Мягкая тень окна */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 
-                        inset 0 1px 0 rgba(255, 255, 255, 0.6); /* Внутренний блик сверху */
+            /* Glossy borders and window shadows */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
-        /* Логотип в стиле Windows Aero */
+        /* Logo with Black Text */
         .logo a {
-            color: #ffffff;
+            color: #1a1a1a; /* Dark charcoal/black color */
             font-size: 22px;
             font-weight: 600;
             text-decoration: none;
-            /* Свечение текста, как в заголовках окон Windows 7 */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 120, 215, 0.5);
+            /* Light backing glow to keep text readable against dark backgrounds */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
-        /* Навигационные ссылки */
+        /* Navigation Links Container */
         .nav-links {
             display: flex;
             list-style: none;
@@ -70,54 +68,57 @@
             margin-left: 15px;
         }
 
+        /* Links with Black Text */
         .nav-links a {
-            color: #ffffff;
+            color: #222222; /* Dark grey/black color */
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
             padding: 8px 16px;
             border-radius: 4px;
             border: 1px solid transparent;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); /* Text highlight */
             transition: all 0.2s ease-in-out;
         }
 
-        /* Эффект наведения в стиле кнопок Windows 7 */
+        /* Hover Effect for Links */
         .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.3);
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.2);
+            color: #000000; /* Pure black on hover */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 1);
         }
 
-        /* Отступ для контента */
+        /* Content Area Spacer */
         .content {
             margin-top: 100px;
             padding: 30px;
-            color: #ffffff;
         }
 
-        /* Карточка контента тоже в стиле Aero */
+        /* Aero Content Box with Black Text */
         .content-box {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             padding: 25px;
             border-radius: 8px;
             max-width: 600px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            color: #222222; /* Dark text for the main body */
         }
 
         .content-box h1 {
             margin-bottom: 15px;
-            font-weight: 400;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-weight: 600;
+            color: #1a1a1a;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
 <body>
-
+    
     <!-- Aero Topbar -->
     <header class="aero-topbar">
         <div class="logo">
