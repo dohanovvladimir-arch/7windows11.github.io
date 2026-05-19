@@ -3,8 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7Windows11's WebSite</title>
-    <h1>Nothing to in Topbar</h1>
-    <a href="https://teknixstuff.com/Favorites/Home/Revert8Plus" tabindex="0" class="active"><div class="item-container"><div class="icon"><div class="iconCrop"><img alt="" src="/icons/full/r8p.ico"></div></div></div><div class="text-container"><div class="name">Revert8Plus</div><p class="item-description">A fully automated and customisable Windows transformation pack from teknixstuff.com</p></div></a>
+    <title>7Windows11's Site</title>
+    <style>
+        /* Сброс отступов и добавление фонового изображения в стиле Win 7 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Яркий абстрактный фон, чтобы было хорошо видно эффект размытия стекла */
+            background: linear-gradient(135px, #0078d7 0%, #00bcf2 40%, #00b294 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Эффект стекла Windows Aero */
+        .aero-topbar {
+            /* Полупрозрачный белый/голубоватый фон */
+            background: rgba(255, 255, 255, 0.15); 
+            
+            /* Главный секрет Aero: размытие всего, что находится ЗА панелью */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px); /* Поддержка Safari */
+
+            /* Выравнивание элементов */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            
+            /* Фиксация наверх */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            /* Тонкая глянцевая рамка (имитация блика на грани стекла) */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            
+            /* Мягкая тень окна */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6); /* Внутренний блик сверху */
+        }
+
+        /* Логотип в стиле Windows Aero */
+        .logo a {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+            /* Свечение текста, как в заголовках окон Windows 7 */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 120, 215, 0.5);
+        }
+
+        /* Навигационные ссылки */
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 15px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Эффект наведения в стиле кнопок Windows 7 */
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Отступ для контента */
+        .content {
+            margin-top: 100px;
+            padding: 30px;
+            color: #ffffff;
+        }
+
+        /* Карточка контента тоже в стиле Aero */
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-box h1 {
+            margin-bottom: 15px;
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aero Topbar -->
+    <header class="aero-topbar">
+        <div class="logo">
+            <a href="#">AeroGlass</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Desktop</a></li>
+                <li><a href="#">Desktop\About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        <div class="content-box">
+            <h1>Windows Aero Theme</h1>
+            <p>This layout uses the modern <code>backdrop-filter</code> CSS property to replicate the iconic translucent glass look from Windows 7 and Windows Vista.</p>
+        </div>
+    </main>
+
 </body>
 </html>
